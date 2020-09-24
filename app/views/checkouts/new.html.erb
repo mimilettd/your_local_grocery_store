@@ -1,0 +1,7 @@
+<h2>Your Local Grocery Store Checkout<h2>
+
+<%= form_tag(checkouts_path, method: :post) do %>
+  <%= text_field_tag(:items, params[:items]) %>
+  <%= submit_tag "Checkout" %>
+<% end %>
+

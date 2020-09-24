@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      td, th, p {
+        padding: 2px;
+        font-family: monospace;
+        font-size: 15px;
+      }
+    </style>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+          <th>--------</th>
+          <th>--------</th>
+          <th>--------</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @receipt.product_line_items.each do |p| %>
+          <tr>
+            <td><%= p.product.name %></td> 
+            <td><%= p.quantity %></td>
+            <td><%= number_to_currency p.price.to_f / 100 %></td>
+          <% end %>
+      </tbody>
+    </table>
+
+    <p>Total price : <%= number_to_currency @receipt.total_price.to_f / 100 %></br>
+      You saved <%= number_to_currency @receipt.total_savings.to_f / 100 %> today.</p>
+  </head>
+</html>
