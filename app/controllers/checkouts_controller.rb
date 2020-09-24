@@ -8,14 +8,9 @@ class CheckoutsController < ActionController::Base
       flash.now[:notice] = 'Failed to checkout'
       render :new
     end
-
   end
 
   def receipt
     ReceiptWriter.call(params["items"])
-  end
-
-  def checkout_params
-    params.permit(:items)
   end
 end
