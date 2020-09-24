@@ -1,24 +1,29 @@
-# README
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Prerequisites
+```
+Ruby 2.6.2
+```
 
-Things you may want to cover:
+### Installing
+Clone the app and change into the `your_local_grocery_store` directory:
 
-* Ruby version
+```
+$ git clone https://github.com/mimilettd/your_local_grocery_store.git
+$ cd your_local_grocery_store
+```
 
-* System dependencies
+### Install the dependencies:
 
-* Configuration
+```
+bundle install
+```
 
-* Database creation
+Run the following commands in your terminal to prepare and start the server:
+```
+$ rake db:create db:migrate db:backfill_products db:backfill_sales
+$ rails s
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To view the application, visit http://localhost:3000/checkouts/new
