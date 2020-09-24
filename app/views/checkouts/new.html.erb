@@ -1,4 +1,7 @@
-<h2>Your Local Grocery Store Checkout<h2>
+<h2>Your Local Grocery Store Checkout</h2>
+
+<h4>Please enter all the items you wish to checkout separated by a comma</h4>
+<p><i>Ex: milk,milk, bread,banana,bread,bread,bread,milk,apple</i></p>
 
 <%= form_tag(checkouts_path, method: :post) do %>
   <%= text_field_tag(:items, params[:items]) %>
